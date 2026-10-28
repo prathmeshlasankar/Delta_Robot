@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delta Robot · COEP Technological University</title>
+<meta name="description" content="Academic project showcase: a Delta Robot concept by the Department of Robotics and Artificial Intelligence, COEP Technological University, Pune.">
+<meta name="theme-color" content="#060b16">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,8 58,54 6,54' fill='none' stroke='%2338d6f2' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#model">Skip to the 3D model</a>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Delta Robot, back to top"><span class="dot"></span>Delta Robot</a>
+  <button id="navToggle" class="burger" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">Menu</button>
+  <nav id="navLinks" class="links" aria-label="Sections">
+    <a href="#model">3D Model</a><a href="#how">How it works</a><a href="#components">Components</a><a href="#principle">Principle</a><a href="#applications">Applications</a><a href="#project">Project</a><a href="#future">Future scope</a>
+  </nav>
+</header>
+
+<main>
+<section id="top" class="hero">
+  <p class="eyebrow">Academic project showcase</p>
+  <h1>Delta Robot</h1>
+  <p class="lead">A three-arm parallel robot concept for fast, precise pick-and-place motion.</p>
+  <ul class="meta">
+    <li><span>Team</span>Prathmesh Lasankar &amp; Mangesh</li>
+    <li><span>University</span>COEP Technological University, Pune</li>
+    <li><span>Department</span>Robotics and Artificial Intelligence</li>
+    <li><span>Guide</span>Dr. S. S. Ohol</li>
+  </ul>
+  <p class="badge">Concept stage · the physical robot and CAD model are not built yet</p>
+  <a class="btn primary" href="#model">Explore</a>
+  <a class="btn" href="https://github.com/prathmeshlasankar/Delta_Robot" target="_blank" rel="noopener">GitHub repository</a>
+</section>
+
+<section id="model" class="wrap reveal">
+  <h2>Interactive 3D model</h2>
+  <p class="sub">An <strong>illustrative conceptual model</strong> made from simple generated geometry. It is not our CAD design, and its proportions are not project dimensions.</p>
+  <div class="stage">
+    <div id="viewer" class="viewer" tabindex="0" aria-label="Interactive 3D delta robot. Drag to rotate, scroll or pinch to zoom, arrow keys also rotate."></div>
+    <div id="fallback" class="viewer fallback" hidden>
+      <svg viewBox="0 0 400 300" role="img" aria-label="Simplified 2D illustration of a delta robot">
+        <polygon points="70,50 330,50 270,80 130,80" fill="none" stroke="#38d6f2" stroke-width="3"/>
+        <g stroke="#8fa2bd" stroke-width="3" fill="none"><line x1="110" y1="70" x2="70" y2="120"/><line x1="290" y1="70" x2="330" y2="120"/><line x1="200" y1="80" x2="200" y2="120"/></g>
+        <g class="fb-move">
+          <g stroke="#e6edf7" stroke-width="2.5"><line x1="70" y1="120" x2="185" y2="215"/><line x1="330" y1="120" x2="215" y2="215"/><line x1="200" y1="120" x2="200" y2="210"/></g>
+          <ellipse cx="200" cy="218" rx="30" ry="8" fill="#38d6f2"/>
+        </g>
+        <line x1="40" y1="270" x2="360" y2="270" stroke="#1b2a44" stroke-width="3"/>
+      </svg>
+      <p>3D could not load, so this simplified 2D illustration is shown instead.</p>
+    </div>
+  </div>
+  <div class="controls" role="group" aria-label="Animation controls">
+    <button id="btnPlay" class="btn primary" aria-pressed="false">Play</button>
+    <button id="btnReset" class="btn">Reset</button>
+    <span id="status" class="status" role="status" aria-live="polite">Paused · conceptual animation</span>
+  </div>
+  <p class="note">The animation runs in your browser only. It does not show a physical robot operating. Drag to rotate, scroll or pinch to zoom.</p>
+</section>
+
+<section id="how" class="wrap reveal">
+  <h2>How it works</h2>
+  <p class="sub">A delta robot is a parallel kinematic mechanism: several arms share the work of positioning one platform.</p>
+  <div class="grid3">
+    <article class="card"><h3>1 · Three arms, one platform</h3><p>Three identical arms hang from a fixed triangular frame. Each arm connects to the same moving end-effector.</p></article>
+    <article class="card"><h3>2 · Parallelogram linkages</h3><p>Each lower arm is a pair of parallel rods. This keeps the end-effector facing the same way while it moves.</p></article>
+    <article class="card"><h3>3 · Coordinated motion</h3><p>An actuator at the top of each arm sets its angle. The three angles together fix the position of the end-effector in space.</p></article>
+  </div>
+</section>
+
+<section id="components" class="wrap reveal">
+  <h2>Main components</h2>
+  <div class="grid3">
+    <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><polygon points="32,8 58,54 6,54"/></svg><h3>Base / frame</h3><p>The fixed triangular upper frame that carries the actuators.</p></article>
+    <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="16" y="22" width="32" height="20" rx="4"/><circle cx="32" cy="32" r="5"/></svg><h3>Three actuators</h3><p>One motor per arm, mounted on the frame, sets the arm angle.</p></article>
+    <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><line x1="12" y1="14" x2="38" y2="32"/><circle cx="12" cy="14" r="4"/><circle cx="38" cy="32" r="4"/></svg><h3>Upper arms</h3><p>Short driven arms that swing from the actuators.</p></article>
+    <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><line x1="14" y1="12" x2="44" y2="52"/><line x1="24" y1="10" x2="54" y2="50"/><line x1="14" y1="12" x2="24" y2="10"/><line x1="44" y1="52" x2="54" y2="50"/></svg><h3>Parallelogram linkages</h3><p>Pairs of parallel rods joining each upper arm to the end-effector.</p></article>
+    <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="12"/><line x1="26" y1="36" x2="26" y2="54"/><line x1="38" y1="36" x2="38" y2="54"/></svg><h3>End-effector</h3><p>The moving platform that carries a gripper or tool.</p></article>
+    <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="16" width="44" height="32" rx="4"/><line x1="18" y1="26" x2="34" y2="26"/><line x1="18" y1="34" x2="46" y2="34"/></svg><h3>Controller</h3><p>Electronics and software that command the three actuators together.</p></article>
+  </div>
+</section>
+
+<section id="principle" class="wrap reveal">
+  <h2>Working principle</h2>
+  <p class="sub">The conceptual sequence behind every move.</p>
+  <ol class="steps">
+    <li><b>Target position</b><span>A point in space the end-effector should reach.</span></li>
+    <li><b>Inverse kinematics</b><span>Maths that turns the target point into one angle per arm.</span></li>
+    <li><b>Coordinated arm movement</b><span>All three actuators move together to those angles.</span></li>
+    <li><b>Target reached</b><span>The end-effector arrives at the requested point.</span></li>
+  </ol>
+  <p class="note">The 3D demo above does use a standard delta-robot inverse-kinematics formula, with placeholder arm lengths chosen only for display. Our own kinematic model for the real robot is still future work.</p>
+</section>
+
+<section id="applications" class="wrap reveal">
+  <h2>Applications</h2>
+  <div class="grid4">
+    <article class="card"><h3>Packaging</h3><p>Placing items into trays and boxes.</p></article>
+    <article class="card"><h3>Sorting</h3><p>Moving items into groups quickly.</p></article>
+    <article class="card"><h3>Assembly</h3><p>Positioning light parts accurately.</p></article>
+    <article class="card"><h3>Laboratory automation</h3><p>Handling samples and small labware.</p></article>
+  </div>
+</section>
+
+<section id="project" class="wrap reveal">
+  <h2>Project information</h2>
+  <dl class="info">
+    <div><dt>Project</dt><dd>Delta Robot</dd></div>
+    <div><dt>Team members</dt><dd>Prathmesh Lasankar, Mangesh</dd></div>
+    <div><dt>Department</dt><dd>Robotics and Artificial Intelligence</dd></div>
+    <div><dt>University</dt><dd>COEP Technological University, Pune</dd></div>
+    <div><dt>Project guide</dt><dd>Dr. S. S. Ohol</dd></div>
+    <div><dt>Status</dt><dd>Concept stage</dd></div>
+  </dl>
+</section>
+
+<section id="future" class="wrap reveal">
+  <h2>Future scope</h2>
+  <ol class="steps">
+    <li><b>CAD development</b><span>Design the frame, arms and end-effector.</span></li>
+    <li><b>Kinematic modelling</b><span>Derive and verify the model for our own dimensions.</span></li>
+    <li><b>Motion control</b><span>Coordinate the actuators and plan trajectories.</span></li>
+    <li><b>Simulation</b><span>Test motions virtually before building.</span></li>
+    <li><b>Physical prototype</b><span>Build and test the real robot.</span></li>
+  </ol>
+</section>
+</main>
+
+<footer>
+  <p>Academic project showcase · Department of Robotics and Artificial Intelligence, COEP Technological University, Pune</p>
+  <p>Prathmesh Lasankar &amp; Mangesh · Guide: Dr. S. S. Ohol · <a href="https://github.com/prathmeshlasankar/Delta_Robot" target="_blank" rel="noopener">Source on GitHub</a></p>
+  <p class="small">3D visuals are conceptual and generated in the browser with <a href="https://threejs.org" target="_blank" rel="noopener">Three.js</a> (MIT licence).</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
