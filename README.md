@@ -1,7 +1,6 @@
 # Delta Robot · Academic Project Showcase
 
-COEP Technological University, Pune · Robotics and Artificial Intelligence
-Team: Prathmesh and Mangesh 
+COEP Technological University, Pune · Robotics and Artificial Intelligence 
 
 A static, mobile-friendly website for the Delta Robot project. Plain HTML, CSS and JavaScript. No build step, no backend, no API keys.
 
